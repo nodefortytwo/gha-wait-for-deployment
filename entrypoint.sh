@@ -6,7 +6,7 @@ set -e
 while [ $MAX_TRIES -gt 0 ]
 do
     VALUE=`curl -s  $URL | jq $QUERY -r`
-    if [[ $VALUE = $DESIRED_VALUE ]]; then
+    if [ $VALUE = $DESIRED_VALUE ]; then
         echo "Deploy complete!"
         exit 0
     else
